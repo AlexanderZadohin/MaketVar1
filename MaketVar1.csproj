@@ -94,9 +94,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Icons\FullNameIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaketVarBibliarry1\MaketVarBibliarry1.csproj">
+      <Project>{d7c6297d-b873-4b8a-a9b8-f03eb4e5c8c0}</Project>
+      <Name>MaketVarBibliarry1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

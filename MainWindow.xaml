@@ -33,11 +33,11 @@
 
         <Label Content="Account" Grid.Column="1"/>
 
-        <TextBox Name="FullNameTb" Text="Full Name" Grid.Column="1" Grid.Row="1"/>
+        <TextBox  GotFocus="FullNameTb_GotFocus" LostFocus="FullNameTb_LostFocus" Name="FullNameTb" Text="Full Name" Grid.Column="1" Grid.Row="1"/>
 
-        <TextBox Name="EmailTb" Text="Email" Grid.Column="1" Grid.Row="2"/>
+        <TextBox GotFocus="EmailTb_GotFocus" LostFocus="EmailTb_LostFocus" Name="EmailTb" Text="Email" Grid.Column="1" Grid.Row="2"/>
 
-        <TextBox Name="PasswordTb" Text="Password" Grid.Column="1" Grid.Row="3" />
+        <TextBox Text="Password" GotFocus="PasswordTb_GotFocus" LostFocus="PasswordTb_LostFocus" Name="PasswordTb"   Grid.Column="1" Grid.Row="3" />
 
         <Grid Grid.Row="4" Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -59,17 +59,17 @@
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBox Name="DaysTb" Text="DD" Style="{StaticResource DateBirth}" />
-                <TextBox Name="MonthTb" Text="MM" Style="{StaticResource DateBirth}" Grid.Column="1"/>
-                <TextBox Name="YearTb" Text="YYYY" Style="{StaticResource DateBirth}" Grid.Column="2" TextAlignment="Center"/>
+                <TextBox GotFocus="DaysTb_GotFocus" LostFocus="DaysTb_LostFocus" Name="DaysTb" Text="DD" Style="{StaticResource DateBirth}" />
+                <TextBox GotFocus="MonthTb_GotFocus" LostFocus="MonthTb_LostFocus" Name="MonthTb" Text="MM" Style="{StaticResource DateBirth}" Grid.Column="1"/>
+                <TextBox GotFocus="YearTb_GotFocus" LostFocus="YearTb_LostFocus" Name="YearTb" Text="YYYY" Style="{StaticResource DateBirth}" Grid.Column="2" TextAlignment="Center"/>
             </Grid>
             <Grid Margin="5 0" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource GenderBtn}" Content="Male"/>
-                <Button Style="{StaticResource GenderBtn}" Content="Female" Grid.Column="1"/>
+                <Button x:Name="MaleChoise" Style="{StaticResource GenderBtn}" Content="Male" Click="MaleChoise_Click"/>
+                <Button Style="{StaticResource GenderBtn}" Name="FemaleChoise" Click="FemaleChoise_Click" Content="Female" Grid.Column="1"/>
             </Grid>
         </Grid>
 
@@ -80,11 +80,11 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Button Content="Credit Card" Style="{StaticResource GenderBtn}"/>
-            <Button Grid.Column="1" Content="PayPal" Style="{StaticResource GenderBtn}"/>
+            <Button Name="CreditCardBtn" Click="CreditCardBtn_Click"  Content="Credit Card" Style="{StaticResource GenderBtn}"/>
+            <Button Name="PayPalbtn" Click="PayPalbtn_Click" Grid.Column="1" Content="PayPal" Style="{StaticResource GenderBtn}"/>
         </Grid>
-        
-        <TextBox Name="CardNumTb" Grid.Column="1" Grid.Row="8" Text="Card Number"/>
+
+        <TextBox GotFocus="CardNumTb_GotFocus"  LostFocus="CardNumTb_LostFocus" Name="CardNumTb" Grid.Column="1" Grid.Row="8" Text="Card Number"/>
 
         <Grid Grid.Column="1" Grid.Row="9">
             <Grid.ColumnDefinitions>
@@ -92,7 +92,7 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <TextBox Name="CardCVCTb" Text="Card CVC"/>
+            <TextBox Name="CardCVCTb" GotFocus="CardCVCTb_GotFocus" LostFocus="CardCVCTb_LostFocus" Text="Card CVC"/>
             <ComboBox Name="DateEndCmb" Grid.Column="1" FontSize="25" >
                 <TextBlock Text="01 Jan"/>
                 <TextBlock Text="03 Feb"/>
@@ -105,8 +105,8 @@
                 <TextBlock Text="2025"/>
             </ComboBox>
         </Grid>
-        <Label Foreground="orange" Content="Terms and Conditions" Grid.Row="10" Grid.Column="1"/>
-        <CheckBox Name="AccessCb" VerticalAlignment="Center" Grid.Row="10" Grid.Column="1" Content="I accept the terms and conditions for signing up to this service, and nerby confirm i have read the privacy policy."/>
-        <Button Name="ConfirmBtn" Grid.Column="1" Grid.Row="14" Content="Подтвердить" FontSize="50"/>
+        <Label Foreground="orange" Content="Terms and Conditions" Grid.Row="10" Grid.Column="1" />
+        <CheckBox x:Name="AccessCB" Checked="AccessCB_Checked" Unchecked="AccessCB_Unchecked" VerticalAlignment="Center" Grid.Row="10" Grid.Column="1" Content="I accept the terms and conditions for signing up to this service, and nerby confirm i have read the privacy policy."/>
+        <Button Visibility="Hidden" Name="ConfirmBtn" Grid.Column="1" Grid.Row="11" Content="Подтвердить" FontSize="50" Click="ConfirmBtn_Click"/>
     </Grid>
 </Window>
